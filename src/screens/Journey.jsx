@@ -5,11 +5,12 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../constants/index.js";
-
+import { FirstCustomMotion } from "../utils/CustomMotion";
 const Journey = () => {
   return (
+    <FirstCustomMotion>
     <div className="w-screen"> 
-      <div className="h-screen over  md:flex">
+      <div className="h-screen  flex">
         <div className="w-full flex flex-col justify-center items-center">
           <div>
             <h1 className="text-3xl md:text-5xl font-bold px-10 py-2 text-center md:text-left">
@@ -34,6 +35,7 @@ const Journey = () => {
       </div>
       </div>
     </div>
+    </FirstCustomMotion>
   );
 };
 

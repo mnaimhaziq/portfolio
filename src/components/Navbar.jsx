@@ -6,6 +6,9 @@ export default function Navbar() {
   const [nav, setNav] = useState(false);
   const location = useLocation(); // Get the current URL location
   const activeNavItem = location.pathname.substring(1); // Extract the active segment from the URL
+  const isProjectActive = (projectPath) => {
+    return location.pathname.startsWith("/projects/" + projectPath);
+  };
 
   const handleNav = () => {
     setNav(!nav);
@@ -29,7 +32,15 @@ export default function Navbar() {
         <NavItem to="home">Home</NavItem>
         <NavItem to="journey">Journey</NavItem>
         <NavItem to="skills">Skills</NavItem>
-        <NavItem to="project">Projects</NavItem>
+        <NavItem to="projects/small"> <li
+        className={` ${
+          isProjectActive("small") || isProjectActive("big")
+            ? "text-[#f8fafc]"
+            : "hover:text-[#fb923c] text-[#9ca3af]"
+        }`}
+      >
+        Projects
+      </li></NavItem>
         <NavItem to="blog">Blog</NavItem>
       </ul>
       <div onClick={handleNav} className="block md:hidden ml-auto">
@@ -45,7 +56,7 @@ export default function Navbar() {
         <NavItem onClick={handleNav} to="home">Home</NavItem>
         <NavItem onClick={handleNav} to="journey">Journey</NavItem>
         <NavItem onClick={handleNav} to="skills">Skills</NavItem>
-        <NavItem onClick={handleNav} to="project">Projects</NavItem>
+        <NavItem onClick={handleNav} to="projects/small">Projects</NavItem>
         <NavItem onClick={handleNav} to="blog">Blog</NavItem>
       </ul>
     </nav>
