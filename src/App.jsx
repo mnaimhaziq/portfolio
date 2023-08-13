@@ -16,34 +16,29 @@ import Projects from "./screens/Projects/Projects";
 import SmallProject from "./screens/Projects/SmallProjects";
 import BigProjects from "./screens/Projects/BigProjects";
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scroll to the top when location changes
-  }, [location]);
+  // const location = useLocation();
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   window.scrollTo(0, 0); // Scroll to the top when location changes
+  // }, [location]);
 
   return (
-    
-    <div className="min-h-screen min-w-screen bg-[#171718] text-white font-sans">
-      <div className="fixed top-0 w-full z-50">
-        <Navbar />
-      </div>
-      <div>
-       
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/home" replace />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/journey" element={<Journey />} />
-              <Route path="/projects" element={<Projects />}>
-                 <Route path="small" element={<SmallProject />} />
-                 <Route path="big" element={<BigProjects />} />
-              </Route>
-              <Route path="*" element={ <Navigate to="/home" replace />} />
+    <BrowserRouter>
+      <div className="min-h-screen min-w-screen bg-[#171718] text-white font-sans">
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/journey" element={<Journey />} />
+            <Route path="/projects" element={<Projects />}>
+              <Route path="small" element={<SmallProject />} />
+              <Route path="big" element={<BigProjects />} />
             </Route>
-          </Routes>
+            <Route path="*" element={<Navigate to="/home" replace />} />
+          </Route>
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
