@@ -1,40 +1,19 @@
 import React from "react";
+import Card from "../../components/Card";
+import { projects } from "../../constants/index.js";
 
 const SmallProjects = () => {
   return (
-    <div className=" min-h-min p-4">
+    <div className="min-h-min p-4">
       <div className="grid md:grid-cols-3 gap-4">
-       
-        <div className="border-2 p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-
-     
-        <div className="border-2  p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-
-       
-        <div className="border-2  p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-        
-        <div className="border-2  p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-        
-        <div className="border-2  p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-        
-        <div className="border-2  p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-        
-        <div className="border-2  p-4 rounded shadow-md h-80">
-          {/* Card content */}
-        </div>
-        {/* Repeat similar structure for more cards */}
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="p-4 rounded shadow-none hover:shadow-2xl hover:ring-2 ring-[#fb923c] hover:ring-opacity-50 h-80 bg-black"
+          >
+            <Card project={project} />
+          </div>
+        ))}
       </div>
     </div>
   );
