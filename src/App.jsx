@@ -31,6 +31,7 @@ function App() {
         {" "}
         {/* Add padding top to the content */}
         <AnimatePresence mode="wait">
+          
           <Routes key={location.pathname} location={location}>
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/home" replace />} />
@@ -40,7 +41,7 @@ function App() {
                  <Route path="small" element={<SmallProject />} />
                  <Route path="big" element={<BigProjects />} />
               </Route>
-              <Route path="*" element={<h1>Not Found</h1>} />
+              <Route path="*" element={ <Navigate to="/home" replace />} />
             </Route>
           </Routes>
         </AnimatePresence>
