@@ -23,6 +23,7 @@ function App() {
   }, [location]);
 
   return (
+    
     <div className="min-h-screen min-w-screen bg-[#171718] text-white font-sans">
       <div className="fixed top-0 w-full z-50">
         <Navbar />
@@ -32,7 +33,7 @@ function App() {
         {/* Add padding top to the content */}
         <AnimatePresence mode="wait">
           
-          <Routes key={location.pathname} location={location}>
+          <Routes location={location}>
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/home" replace />} />
               <Route path="/home" element={<Home />} />

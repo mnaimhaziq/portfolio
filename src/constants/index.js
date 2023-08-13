@@ -112,6 +112,47 @@ const experiences = [
   },
 ];
 
+const projects = [
+  {
+    title: "Recycling Tracking System",
+    shortDescription: "Efficiently manage recycling processes with transparency. Streamline collection, processing, and tracking of recyclable materials. Promote environmental sustainability through data-driven insights.",
+    longDescription: "The Recycling Tracking System is a comprehensive platform designed to streamline and monitor recycling processes. It efficiently manages the entire lifecycle of recyclable materials, from collection and processing to distribution. By providing real-time tracking and data-driven insights, it empowers stakeholders to make informed decisions that promote environmental sustainability. The system leverages technologies such as Java Spring, Hibernate, Angular, and REST APIs to deliver a seamless user experience.",
+    githubLink: "https://github.com/yourusername/recycling-tracking-system",
+    websiteLink: "https://www.recyclingtrackingsystem.com",
+    technologiesUsed: ["Java Spring", "Hibernate", "Angular", "REST APIs"],
+    tags: ["Environmental Sustainability", "Resource Management", "Web Application"],
+  },
+  {
+    title: "Multitenancy Integration",
+    shortDescription: "Boost application efficiency with multitenancy. Share app instances with data isolation. Customize tenant experience with Angular. Enhance backend and frontend performance.",
+    longDescription: "This project focuses on enhancing application efficiency by integrating multitenancy support. Leveraging Java Spring and Hibernate, it enables multiple tenants to share the same application instance while maintaining data isolation. The system caters to both backend and frontend performance, optimizing data management and user experience. By using technologies like Java Spring, Hibernate, Angular, and Database Management, it successfully addresses the challenges of application scalability and customization.",
+    githubLink: "https://github.com/yourusername/multitenancy-integration",
+    websiteLink: "",
+    technologiesUsed: ["Java Spring", "Hibernate", "Angular", "Database Management"],
+    tags: ["Application Efficiency", "Multitenancy", "Backend Development", "Frontend Development"],
+  },
+  {
+    title: "Project Management Platform",
+    shortDescription: "Efficiently manage both small and big projects. Assign tasks, track progress, and collaborate seamlessly. Facilitate team communication and improve project outcomes.",
+    longDescription: "The Project Management Platform is a versatile tool that caters to various project sizes. From assigning tasks and tracking progress to facilitating seamless team communication, it empowers project managers and teams to collaborate effectively. By utilizing technologies like React, Node.js, MongoDB, and REST APIs, the platform ensures smooth task management, real-time updates, and enhanced project outcomes.",
+    githubLink: "https://github.com/yourusername/project-management-platform",
+    websiteLink: "https://www.projectmanagementplatform.com",
+    technologiesUsed: ["React", "Node.js", "MongoDB", "REST APIs"],
+    tags: ["Project Management", "Task Tracking", "Collaboration", "Web Application"],
+  },
+  {
+    title: "Project Management Platform",
+    shortDescription: "Efficiently manage both small and big projects. Assign tasks, track progress, and collaborate seamlessly. Facilitate team communication and improve project outcomes.",
+    longDescription: "The Project Management Platform is a versatile tool that caters to various project sizes. From assigning tasks and tracking progress to facilitating seamless team communication, it empowers project managers and teams to collaborate effectively. By utilizing technologies like React, Node.js, MongoDB, and REST APIs, the platform ensures smooth task management, real-time updates, and enhanced project outcomes.",
+    githubLink: "https://github.com/yourusername/project-management-platform",
+    websiteLink: "https://www.projectmanagementplatform.com",
+    technologiesUsed: ["React", "Node.js", "MongoDB", "REST APIs"],
+    tags: ["Project Management", "Task Tracking", "Collaboration", "Web Application"],
+  },
+];
+
+
+
 
 const testimonials = [
   {
@@ -140,70 +181,6 @@ const testimonials = [
   },
 ];
 
-const projects = [
-  {
-    name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    // image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    // image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    // image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-];
+
 
 export { experiences, testimonials, projects };
