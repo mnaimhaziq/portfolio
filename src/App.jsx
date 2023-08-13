@@ -33,7 +33,7 @@ function App() {
         {/* Add padding top to the content */}
         <AnimatePresence mode="wait">
           
-          <Routes location={location}>
+          <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/home" replace />} />
               <Route path="/home" element={<Home />} />
