@@ -29,10 +29,7 @@ function App() {
         <Navbar />
       </div>
       <div>
-        {" "}
-        {/* Add padding top to the content */}
-        <AnimatePresence mode="wait">
-          
+       
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/home" replace />} />
@@ -45,7 +42,6 @@ function App() {
               <Route path="*" element={ <Navigate to="/home" replace />} />
             </Route>
           </Routes>
-        </AnimatePresence>
       </div>
     </div>
   );
