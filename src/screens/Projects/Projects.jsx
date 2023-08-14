@@ -1,63 +1,71 @@
-import React from "react";
-import { Link, Outlet } from "react-router-dom";
-import { SecondCustomMotion } from "../../utils/CustomMotion";
-const Projects = () => {
-  const activeNavItem = "/" + location.pathname.substring(1); // Extract the active segment from the URL
+import React, { useState } from "react";
+import { FirstCustomMotion } from "../../utils/CustomMotion";
+import { projects } from "../../constants";
+import ProjectCard from "../../components/ProjectCard";
 
-  const NavItem = ({ to, children }) => {
-    return (
-      <Link to={to}>
-        <li
-          className={`p-4 cursor-pointer ${
-            activeNavItem === to
-              ? "text-[#f8fafc]"
-              : "hover:text-[#fb923c] text-[#9ca3af]"
-          }`}
-        >
-          {children}
-        </li>
-      </Link>
-    );
-  };
+const Projects = () => {
+  const [selectedFilter, setSelectedFilter] = useState("All");
+
+  const filteredProjects =
+    selectedFilter !== "All"
+      ? projects.filter((project) => project.type === selectedFilter)
+      : projects;
 
   return (
-    // <div className=" w-screen h-screen  md:flex justify-center">
-    //   <div className=" w-5/6 flex flex-col justify-center ">
-    //     <div className=" flex justify-start ">
-    //       <NavItem className="py-1 px-3 " to="/projects/small">
-    //         Small Project
-    //       </NavItem>
-    //       <NavItem className="py-1 px-3" to="/projects/big">
-    //         Big Project
-    //       </NavItem>
-    //     </div>
-    //     <SecondCustomMotion>
-    //       <Outlet />
-    //     </SecondCustomMotion>
-    //   </div>
-    // </div>
-    <div className=" w-screen h-screen">
-      <div className="mt-36 0 text-center mb-10">
-        <h1 className="text-3xl font-bold my-1 ">Projects</h1>
-        <p>Here's some of my project's list!</p>
-      </div>
-      <div className="  w-5/6  mx-auto">
-        <div className=" flex justify-center md:justify-start ">
-          <NavItem className="py-1 px-3 " to="/projects/small">
-            Small Project
-          </NavItem>
-          <NavItem className="py-1 px-3" to="/projects/big">
-            Big Project
-          </NavItem>
+    <FirstCustomMotion>
+      <div className="w-screen">
+        <div className="h-screen flex">
+          <div className="w-full flex flex-col justify-center items-center">
+            <div>
+              <h1 className="text-3xl md:text-5xl font-bold px-10 py-2 text-center md:text-center">
+                Curious to See What I've Accomplished?
+              </h1>
+              <h3 className="text-lg md:text-xl px-10 py-2 text-center">
+                Explore a Showcase of My Notable Projects
+              </h3>
+            </div>
+          </div>
         </div>
-       
-      </div>
-      <div className="w-5/6  mx-auto">
-          <SecondCustomMotion>
-            <Outlet />
-          </SecondCustomMotion>
+        <div className="w-5/6 mx-auto my-6">
+          <ul className="grid grid-cols-3 md:flex md:justify-start  list-none">
+            <div
+              className={`cursor-pointer list-item py-1 px-3 ${
+                selectedFilter === "All" ? "text-[#fb923c] font-semibold" : ""
+              }`}
+              onClick={() => setSelectedFilter("All")}
+            >
+              All
+            </div>
+            <div
+              className={`cursor-pointer list-item py-1 px-3 ${
+                selectedFilter === "big" ? "text-[#fb923c] font-semibold" : ""
+              }`}
+              onClick={() => setSelectedFilter("big")}
+            >
+              Big Projects
+            </div>
+            <div
+              className={`cursor-pointer list-item py-1 px-3 ${
+                selectedFilter === "smalld"
+                  ? "text-[#fb923c] font-semibold"
+                  : ""
+              }`}
+              onClick={() => setSelectedFilter("small")}
+            >
+              Small Projects
+            </div>
+          </ul>
         </div>
-    </div>
+
+        <div className="w-11/12 mx-auto mb-80">
+          <div className="grid md:grid-cols-3 gap-10">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} index={index} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </FirstCustomMotion>
   );
 };
 
