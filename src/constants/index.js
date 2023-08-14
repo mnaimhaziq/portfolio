@@ -1,3 +1,22 @@
+import recytrack from '../assets/projects/recytrack.png'
+import portfolio from '../assets/projects/portfolio.png'
+import calculator from '../assets/projects/calculator.png'
+import randomquotegenerator from '../assets/projects/randomquotegenerator.png'
+import react from '../assets/skills/react.png'
+import javascript from '../assets/skills/javascript.png'
+import css from '../assets/skills/css.png'
+import bootstrap from '../assets/skills/bootstrap.png'
+import java from '../assets/skills/java.png'
+import python from '../assets/skills/python.png'
+import spring from '../assets/skills/spring.png'
+import angular from '../assets/skills/angular.png'
+import git from '../assets/skills/git.png'
+import mysql from '../assets/skills/mysql.png'
+import mongodb from '../assets/skills/mongodb.png'
+import tailwind from '../assets/skills/tailwind.png'
+import nodejs from '../assets/skills/nodejs.png'
+import aws from '../assets/skills/aws.png'
+import flutter from '../assets/skills/flutter.png'
 export const navLinks = [
   {
     id: "about",
@@ -87,6 +106,13 @@ export const navLinks = [
 //   },
 // ];
 
+const biography = {
+  name: "Muhammad Naim Haziq bin Zulkefle",
+  email: "mnaimhaziq@gmail.com",
+  title: "Software Engineer",
+  description: "I am a software engineer with a passion for developing software solutions. I have a strong background in computer science and a strong interest in software engineering. I am currently looking for opportunities to contribute to open-source projects.",
+}
+
 const experiences = [
   {
     year: "2023",
@@ -115,41 +141,131 @@ const experiences = [
 const projects = [
   {
     title: "Recycling Tracking System",
-    shortDescription: "Efficiently manage recycling processes with transparency. Streamline collection, processing, and tracking of recyclable materials. Promote environmental sustainability through data-driven insights.",
+    shortDescription: "RecyTrack's innovative mobile and web app redefines sustainable practices. Seamlessly track recycling progress, engage with fellow environmental enthusiasts, and play a pivotal role in creating a greener future.",
     longDescription: "The Recycling Tracking System is a comprehensive platform designed to streamline and monitor recycling processes. It efficiently manages the entire lifecycle of recyclable materials, from collection and processing to distribution. By providing real-time tracking and data-driven insights, it empowers stakeholders to make informed decisions that promote environmental sustainability. The system leverages technologies such as Java Spring, Hibernate, Angular, and REST APIs to deliver a seamless user experience.",
-    githubLink: "https://github.com/yourusername/recycling-tracking-system",
-    websiteLink: "https://www.recyclingtrackingsystem.com",
-    technologiesUsed: ["Java Spring", "Hibernate", "Angular", "REST APIs"],
+    image: recytrack,
+    githubLink: "https://github.com/mnaimhaziq/RecyTack",
+    websiteLink: "https://recytrack.onrender.com/",
+    technologiesUsed: ["MERN", "Cloudinary", "Render", "Redux"],
     tags: ["Environmental Sustainability", "Resource Management", "Web Application"],
+    type: "big"
   },
   {
-    title: "Multitenancy Integration",
-    shortDescription: "Boost application efficiency with multitenancy. Share app instances with data isolation. Customize tenant experience with Angular. Enhance backend and frontend performance.",
-    longDescription: "This project focuses on enhancing application efficiency by integrating multitenancy support. Leveraging Java Spring and Hibernate, it enables multiple tenants to share the same application instance while maintaining data isolation. The system caters to both backend and frontend performance, optimizing data management and user experience. By using technologies like Java Spring, Hibernate, Angular, and Database Management, it successfully addresses the challenges of application scalability and customization.",
-    githubLink: "https://github.com/yourusername/multitenancy-integration",
-    websiteLink: "",
-    technologiesUsed: ["Java Spring", "Hibernate", "Angular", "Database Management"],
-    tags: ["Application Efficiency", "Multitenancy", "Backend Development", "Frontend Development"],
+    title: "My Website Portfolio",
+    shortDescription: "Crafting blazing-fast web applications using React-Vite. Elevate user experiences with rapid loading, smooth animations, and responsive design.",
+    longDescription: "Experience the cutting-edge world of high-performance web applications with the Naim Portfolio's React-Vite project. We're dedicated to pushing the boundaries of user experiences by harnessing the power of React-Vite's lightning-fast development environment. Our approach revolves around crafting web applications that prioritize rapid loading times, smooth animations, and responsive design across devices. By seamlessly integrating React's components and Vite's advanced build system, we deliver web apps that stand out in today's digital landscape. From optimizing rendering to leveraging server-side rendering (SSR) for SEO benefits, we ensure your app not only looks great but performs brilliantly. Join us in redefining web app performance with React-Vite.",
+    image: portfolio,
+    githubLink: "https://github.com/mnaimhaziq/portfolio",
+    websiteLink: "https://mnaimhaziq.onrender.com",
+    technologiesUsed: ["React", "Vite", "JavaScript",],
+    tags: ["Web Application", "React", "Vite", "Performance", "Frontend Development"],
+    type: "big"
+},
+{
+  title: "Simple Calculator",
+  shortDescription: "Perform calculations swiftly with this interactive web calculator. A user-friendly interface for basic arithmetic.",
+  longDescription: "Experience quick and easy arithmetic operations with this interactive web calculator. The user-friendly interface allows you to perform addition, subtraction, multiplication, and division effortlessly. Built with HTML, CSS, and vanilla JavaScript, it's a handy tool for your everyday calculations.",
+  image: calculator,
+  websiteLink: "https://codepen.io/Naim-Haziq/pen/oNQKpLK",
+  technologiesUsed: ["HTML", "CSS", "JavaScript"],
+  tags: ["HTML", "CSS", "JavaScript", "Frontend Development"],
+  type: "small"
+},
+{
+  title: "Random Quote Generator",
+  shortDescription: "Get inspired with this interactive web quote generator. Instantly fetch and display random quotes at the click of a button.",
+  longDescription: "Discover inspiration through random quotes with this interactive web quote generator. Click a button to instantly fetch and display insightful quotes. Crafted using HTML, CSS, and vanilla JavaScript, it's a perfect tool for sparking creativity and contemplation.",
+  image: randomquotegenerator,
+  websiteLink: "https://codepen.io/Naim-Haziq/pen/RwqbRxL",
+  technologiesUsed: ["HTML", "CSS", "JavaScript"],
+  tags: [ "HTML", "CSS", "JavaScript", "Frontend Development"],
+  type: "small"
+}
+
+];
+
+const skills = [
+  {
+    name: "React.js",
+    description: "Master the art of building dynamic user interfaces with React.js. Develop reusable components, manage state effectively, and create lightning-fast applications.",
+    image: react,
+    rating: 5,
+    type: "Frontend",
   },
   {
-    title: "Project Management Platform",
-    shortDescription: "Efficiently manage both small and big projects. Assign tasks, track progress, and collaborate seamlessly. Facilitate team communication and improve project outcomes.",
-    longDescription: "The Project Management Platform is a versatile tool that caters to various project sizes. From assigning tasks and tracking progress to facilitating seamless team communication, it empowers project managers and teams to collaborate effectively. By utilizing technologies like React, Node.js, MongoDB, and REST APIs, the platform ensures smooth task management, real-time updates, and enhanced project outcomes.",
-    githubLink: "https://github.com/yourusername/project-management-platform",
-    websiteLink: "https://www.projectmanagementplatform.com",
-    technologiesUsed: ["React", "Node.js", "MongoDB", "REST APIs"],
-    tags: ["Project Management", "Task Tracking", "Collaboration", "Web Application"],
+    name: "React Native",
+    description: "Dive into the world of mobile app development with React Native. Build cross-platform apps that share code and deliver native-like experiences.",
+    image: react,
+    rating: 4,
+    type: "Frontend",
   },
   {
-    title: "Project Management Platform",
-    shortDescription: "Efficiently manage both small and big projects. Assign tasks, track progress, and collaborate seamlessly. Facilitate team communication and improve project outcomes.",
-    longDescription: "The Project Management Platform is a versatile tool that caters to various project sizes. From assigning tasks and tracking progress to facilitating seamless team communication, it empowers project managers and teams to collaborate effectively. By utilizing technologies like React, Node.js, MongoDB, and REST APIs, the platform ensures smooth task management, real-time updates, and enhanced project outcomes.",
-    githubLink: "https://github.com/yourusername/project-management-platform",
-    websiteLink: "https://www.projectmanagementplatform.com",
-    technologiesUsed: ["React", "Node.js", "MongoDB", "REST APIs"],
-    tags: ["Project Management", "Task Tracking", "Collaboration", "Web Application"],
+    name: "Node.js",
+    description: "Harness the power of JavaScript on the server side with Node.js. Build scalable and efficient network applications.",
+    image: nodejs,
+    rating: 4,
+    type: "Backend",
+  },
+  {
+    name: "Tailwind CSS",
+    description: "Craft stylish, responsive, and efficient UIs with Tailwind CSS. Rapidly build modern designs using utility-first classes.",
+    image: tailwind,
+    rating: 4,
+    type: "Frontend",
+  },
+  {
+    name: "MongoDB",
+    description: "Learn the NoSQL database technology MongoDB to store, manage, and retrieve data for your applications.",
+    image: mongodb,
+    rating: 4,
+    type: "Database",
+  },
+  {
+    name: "MySQL",
+    description: "Become proficient in MySQL, a popular relational database, for managing structured data.",
+    image: mysql,
+    rating: 4,
+    type: "Database",
+  },
+  {
+    name: "Java",
+    description: "Master Java programming to build robust backend systems, desktop applications, and Android apps.",
+    image: java,
+    rating: 4,
+    type: "Language",
+  },
+  {
+    name: "Python",
+    description: "Dive into the versatile world of Python and build everything from web applications to data analysis scripts.",
+    image: python,
+    rating: 3,
+    type: "Language",
+  },
+  {
+    name: "JavaScript",
+    description: "Explore the core programming language of the web. Build interactive and dynamic websites with JavaScript.",
+    image: javascript,
+    rating: 4,
+    type: "Language",
+  },
+  {
+    name: "AWS",
+    description: "Become skilled in Amazon Web Services (AWS) to deploy, manage, and scale applications on the cloud.",
+    image: aws,
+    rating: 1,
+    type: "DevOps",
+  },
+  {
+    name: "Flutter",
+    description: "Create beautiful and fast cross-platform apps using Google's UI toolkit, Flutter.",
+    image: flutter,
+    rating: 3,
+    type: "Frontend",
   },
 ];
+
+
+
 
 
 
@@ -183,4 +299,4 @@ const testimonials = [
 
 
 
-export { experiences, testimonials, projects };
+export { experiences, testimonials, projects, skills };

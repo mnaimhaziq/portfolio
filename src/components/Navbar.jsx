@@ -6,19 +6,18 @@ export default function Navbar() {
   const [nav, setNav] = useState(false);
   const location = useLocation(); // Get the current URL location
   const activeNavItem = location.pathname.substring(1); // Extract the active segment from the URL
-  const isProjectActive = (projectPath) => {
-    return location.pathname.startsWith("/projects/" + projectPath);
-  };
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-  const NavItem = ({ to, children }) => (
-    <Link to={to} >
+  const NavItem = ({ to, children, handleNav }) => (
+    <Link to={to} onClick={handleNav}>
       <li
         className={`p-4 cursor-pointer ${
-          activeNavItem === to ? "text-[#f8fafc]" : "hover:text-[#fb923c] text-[#9ca3af]"
+          activeNavItem === to
+            ? "text-[#f8fafc]"
+            : "hover:text-[#fb923c] text-[#9ca3af]"
         }`}
       >
         {children}
@@ -27,20 +26,12 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="flex justify-between items-center h-24 w-full mx-auto px-4 text-white font-bold bg-[#171718]">
+    <nav className="flex justify-between items-center h-24 w-full mx-auto px-4 text-white font-bold bg-[#212324]">
       <ul className="hidden md:flex mx-auto ">
         <NavItem to="home">Home</NavItem>
         <NavItem to="journey">Journey</NavItem>
         <NavItem to="skills">Skills</NavItem>
-        <NavItem to="projects/small"> <li
-        className={` ${
-          isProjectActive("small") || isProjectActive("big")
-            ? "text-[#f8fafc]"
-            : "hover:text-[#fb923c] text-[#9ca3af]"
-        }`}
-      >
-        Projects
-      </li></NavItem>
+        <NavItem to="projects">Projects</NavItem>
         <NavItem to="blog">Blog</NavItem>
       </ul>
       <div onClick={handleNav} className="block md:hidden ml-auto">
@@ -53,12 +44,22 @@ export default function Navbar() {
             : "ease-in-out duration-500 fixed left-[-100%]"
         }
       >
-        <NavItem onClick={handleNav} to="home">Home</NavItem>
-        <NavItem onClick={handleNav} to="journey">Journey</NavItem>
-        <NavItem onClick={handleNav} to="skills">Skills</NavItem>
-        <NavItem onClick={handleNav} to="projects/small">Projects</NavItem>
-        <NavItem onClick={handleNav} to="blog">Blog</NavItem>
+        <NavItem handleNav={handleNav} to="home">
+          Home
+        </NavItem>
+        <NavItem handleNav={handleNav} to="journey">
+          Journey
+        </NavItem>
+        <NavItem handleNav={handleNav} to="skills">
+          Skills
+        </NavItem>
+        <NavItem handleNav={handleNav} to="projects">
+          Projects
+        </NavItem>
+        <NavItem handleNav={handleNav} to="blog">
+          Blog
+        </NavItem>
       </ul>
     </nav>
   );
-};
+}

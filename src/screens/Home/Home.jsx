@@ -1,8 +1,8 @@
 import React from "react";
 import Typed from "react-typed";
-import mypicture from "../assets/mypicture1.jpeg";
-import { LinkedIn, GitHub, Instagram } from "@mui/icons-material";
-import { FirstCustomMotion } from "../utils/CustomMotion";
+import mypicture from "../../assets/mypicture1.jpeg";
+import { LinkedIn, GitHub, Instagram, Code } from "@mui/icons-material";
+import { FirstCustomMotion } from "../../utils/CustomMotion";
 
 export default function Home() {
   return (
@@ -57,6 +57,14 @@ export default function Home() {
                 className="mx-2 hover:text-[#a3a3a3]"
               >
                 <Instagram />
+              </a>
+              <a
+                href="https://codepen.io/Naim-Haziq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-2 hover:text-[#a3a3a3]"
+              >
+                <Code />
               </a>
             </div>
           </div>
