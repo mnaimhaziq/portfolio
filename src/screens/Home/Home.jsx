@@ -3,7 +3,7 @@ import Typed from "react-typed";
 import mypicture from "../../assets/mypicture1.jpeg";
 import { LinkedIn, GitHub, Instagram, Code } from "@mui/icons-material";
 import { FirstCustomMotion } from "../../utils/CustomMotion";
-
+import "./Home.css"
 export default function Home() {
   return (
     <FirstCustomMotion>
@@ -70,13 +70,10 @@ export default function Home() {
           </div>
         </div>
         <div className=" w-full md:w-5/12 flex justify-center items-center">
-          <div className="border-2 rounded-lg p-2 overflow-hidden hover:translate-x-2 hover:translate-y-2 transition-transform duration-500">
-            <img
-              src={mypicture}
-              alt="naimpicture"
-              className="w-48 md:w-80 rounded-lg"
-            />
-          </div>
+        <div className=" rounded-lg  overflow-hidden custom-shape">
+  <img src={mypicture} alt="naimpicture" className="w-48 md:w-80 rounded-lg" />
+</div>
+
         </div>
       </div>
     </FirstCustomMotion>
